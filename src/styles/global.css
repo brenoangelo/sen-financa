@@ -1,0 +1,37 @@
+:root{
+   --gray:#555555;
+   --blue: #427DC1;
+   --green: #5B8C39; 
+   --orange: #ED8236; 
+   --red: #CD2500;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.App{
+    display: flex;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.logo > img{
+    max-width: 25px;
+    margin-right: 10px;
+}
+
+.logo > span{
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--gray);
+    
+}
+
