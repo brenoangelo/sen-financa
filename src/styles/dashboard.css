@@ -1,0 +1,148 @@
+#dashboard-page{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #fff;
+}
+
+header{
+    background: var(--green);
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px;
+}
+
+header > .logo > span,
+header > .logo > span > strong{
+    color: #fff;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info > img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info > span{
+    color: #fff;
+    font-weight: bold;
+}
+
+main{
+    max-width: 1280px;
+    width: 100%;
+    padding: 15px 20px;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    margin-bottom: 50px;
+}
+
+.display > span{
+    font-size: 50px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.display > .footer-display{
+    display: flex;
+    justify-content: space-between;
+    font-size: 35px;
+}
+
+.footer-display > span:nth-of-type(1){
+    color: var(--red);
+}
+.footer-display > span:nth-of-type(2){
+    color: var(--green);
+}
+
+.footer-display button{
+    border: 0;
+    background: transparent;
+
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 10px;
+
+    line-height: 30px;
+    border-radius:50%;
+
+    transition: box-shadow, transform 0.3s;
+
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20);
+}
+.footer-display button:hover{
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.50); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.50);
+
+    transform: scale(1.2);
+}
+
+.footer-display span:nth-of-type(1) > button i{
+    color: var(--red);
+}
+.footer-display span:nth-of-type(2) > button i{
+    color: var(--green);
+}
+
+.cards{
+    display: flex;
+}
+
+.cards .card{
+    margin: 15px;
+}
+
+.transactions table{
+    border-collapse: collapse;
+    width: 100%;
+
+    height: 100%;
+}
+
+table td, th{
+    text-align: left;
+    padding: 10px;
+}
+
+
+.categorias tr:nth-of-type(2){
+    color: var(--orange);
+}
+.categorias tr:nth-of-type(3){
+    color: var(--gray);
+}
+.categorias tr:nth-of-type(4){
+    color: var(--blue);
+}
+.categorias tr:nth-of-type(5){
+    color:var(--red);
+}
+
+
+
+
+

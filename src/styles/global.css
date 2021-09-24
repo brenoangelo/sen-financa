@@ -17,21 +17,30 @@
     display: flex;
 }
 
+h1, h2, h3, h4, h5{
+    font-weight: 400;
+    color: var(--gray);
+}
+
 .logo{
     display: flex;
     align-items: center;
-    height: 50px;
+    max-height: 50px;
 }
 
 .logo > img{
-    max-width: 25px;
+    max-width: 35px;
+    width: 100%;
     margin-right: 10px;
 }
 
 .logo > span{
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 500;
     color: var(--gray);
-    
+}
+
+.logo > span > strong{
+    color: var(--green);
 }
 

@@ -1,0 +1,86 @@
+.modal{
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.modal main{
+    padding: 40px 25px;
+    background: #fff;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+main > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 400px;
+}
+
+form > h3{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.row-form{
+    display: flex;
+}
+
+.row-form input{
+    flex: 1;
+}
+
+form input{
+    padding-left: 10px;
+    font-size:22px;
+    margin-bottom: 10px;
+    line-height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #888;
+}
+
+form select{
+    font-size: 22px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+form button{
+    font-size: 24px;
+    margin: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+
+    transition: filter 0.3s;
+}
+
+form button:hover{
+    filter: brightness(0.90);
+}
+
+form button:nth-of-type(1){
+    background: var(--green);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+}
+
+form button:nth-of-type(2){
+    background: var(--red);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+}

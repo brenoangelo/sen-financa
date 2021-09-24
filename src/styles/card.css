@@ -1,0 +1,28 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 25px;
+    max-width: 400px;
+
+    border-radius: 10px;
+
+    background: #fff;
+    filter: brightness(0.95);
+
+    transition: filter, box-shadow 0.2s;
+}
+
+.card:hover{
+    filter: brightness(1);
+
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20);
+}
+
+.card h3{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
