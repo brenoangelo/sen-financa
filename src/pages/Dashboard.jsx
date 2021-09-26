@@ -5,6 +5,7 @@ import { SpentModal } from "./SpentModal"
 import { RevenueModal } from "./RevenueModal"
 import { EditModal } from "./EditModal"
 import { Transactions } from "../components/Transactions"
+import { Category } from "../components/Category"
 import { Display } from "../components/Display"
 
 import senLogo from '../assets/images/finance-white.png'
@@ -69,6 +70,11 @@ export function Dashboard(){
     
 
     function deleteFinance(id){
+        let resp = prompt('Quer mesmo excluir essa Financa ? [s/n]')?.toLowerCase() 
+        if(resp != 's'){
+            return;
+        }
+
         let financesCopy = Array.from(allFinances)
         let financesFilt = financesCopy.filter((el) => {
             return el.id !== id
@@ -112,9 +118,15 @@ export function Dashboard(){
                     <div className="cards">
                         
                         <Card>
+                            
                             <h3>Transações</h3>
                             <Transactions />
                         </Card>
+
+{/*                         <Card>
+                            <h3>Categorias</h3>
+                            <Category />
+                        </Card> */}
                     </div>    
                 </main>
             </FinancasContext.Provider>

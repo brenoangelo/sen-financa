@@ -8,13 +8,14 @@ export function Display(){
     let saidas
     let entradas
     if(allFinances){
-        total = allFinances.reduce(getTotal, 0)
         entradas = allFinances.reduce(getEntradas, 0)
         saidas = allFinances.reduce(getSaidas, 0)
 
-        function getTotal(total, item){
-            return total + item.value
+        function getTotal(entradas, saidas){
+            return saidas + entradas
         }
+
+        total = getTotal(entradas, saidas)
 
         function getEntradas(total, item){
             if(item.type === "entrada"){
@@ -26,7 +27,7 @@ export function Display(){
 
         function getSaidas(total, item){
             if(item.type === "saida"){
-                return total + item.value
+                return total - item.value
             }
 
             return total
@@ -37,15 +38,15 @@ export function Display(){
 
     return (
         <div className="display">
-            <span>{total.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})}</span>
+            <span>{total?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})}</span>
             <div className="footer-display">
-                <span>{saidas.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
+                <span>{saidas?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
                     <button onClick={handleModalSpent}>
                         <i className="fas fa-minus-circle"></i>
                     </button>
                 </span>
 
-                <span>{entradas.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
+                <span>{entradas?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
                     <button onClick={handleModalRevenue}>
                         <i className="fas fa-plus-circle"></i>
                     </button>

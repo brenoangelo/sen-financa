@@ -6,7 +6,7 @@ import { Modal } from "../components/Modal"
 export function RevenueModal(){
     const [title, setTitle] = useState()
     const [value, setValue] = useState()
-    const [category, setCategory] = useState('Trabalho')
+    const [category, setCategory] = useState('trabalho')
     const { allFinances, setAllFinances, handleModalRevenue, dateNow} = useContext(FinancasContext)
 
     function handleNewRevenue(event){
@@ -15,7 +15,7 @@ export function RevenueModal(){
         if(title === undefined || value === undefined){
             return;
         }
-        if(title.trim() === '' || value === '' || value === 0){
+        if(title.trim() === '' || value === '' || value <= 0){
             return;
         }
         const revenue = {
@@ -41,6 +41,7 @@ export function RevenueModal(){
             <form>
                 <h3>Adicionar Entrada</h3>
                 <input type="text" placeholder="Titulo"
+                    maxLength="20"
                     onChange={event => setTitle(event.target.value)}
                     value={title}
                 />

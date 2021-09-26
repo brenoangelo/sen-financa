@@ -6,7 +6,7 @@ import { Modal } from "../components/Modal"
 export function SpentModal(props){
     const [title, setTitle] = useState()
     const [value, setValue] = useState()
-    const [category, setCategory] = useState('Alimentação')
+    const [category, setCategory] = useState('alimentacao')
     const { allFinances, setAllFinances, dateNow, handleModalSpent} = useContext(FinancasContext)
 
 
@@ -16,13 +16,13 @@ export function SpentModal(props){
         if(title === undefined || value === undefined){
             return;
         }
-        if(title.trim() === '' || value === '' || value === 0){
+        if(title.trim() === '' || value === '' || value <= 0){
             return;
         }
         const spent = {
             id: new Date().getTime(),
             title: title, 
-            value: -Number(value), 
+            value: Number(value), 
             category: category, 
             type: "saida",
             date: dateNow()
@@ -45,13 +45,14 @@ export function SpentModal(props){
             <form>
                 <h3>Adicionar Gasto</h3>
                 <input type="text" placeholder="Titulo"
+                    maxLength="20"
                     onChange={event => setTitle(event.target.value)}
                     value={title}
                 />
                 
                 <div className="row-form">
                     <select value={category} onChange={handleChange}>
-                        <option value="alimentacão">Alimentação</option>
+                        <option value="alimentacao">Alimentação</option>
                         <option value="transporte">Transporte</option>
                         <option value="saude">Saúde</option>
                         <option value="lazer">Lazer</option>
