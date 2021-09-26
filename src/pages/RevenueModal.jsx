@@ -1,24 +1,65 @@
+import { useState, useContext} from 'react'
+import { FinancasContext } from './Dashboard'
 
 import { Modal } from "../components/Modal"
 
 export function RevenueModal(){
+    const [title, setTitle] = useState()
+    const [value, setValue] = useState()
+    const [category, setCategory] = useState('Trabalho')
+    const { allFinances, setAllFinances, handleModalRevenue, dateNow} = useContext(FinancasContext)
+
+    function handleNewRevenue(event){
+        event.preventDefault()
+
+        if(title === undefined || value === undefined){
+            return;
+        }
+        if(title.trim() === '' || value === '' || value === 0){
+            return;
+        }
+        const revenue = {
+            id: new Date().getTime(),
+            title: title, 
+            value: Number(value), 
+            category: category, 
+            type: "entrada",
+            date: dateNow()
+        }
+        
+        setAllFinances([...allFinances, revenue])
+    
+        handleModalRevenue() 
+    }
+
+    function handleChange(event){
+        setCategory(event.target.value)
+    }
 
     return (
         <Modal>
             <form>
-                <input type="text" placeholder="Titulo"/>
-                <select name="categoria">
-                    <option value="alimentacao">Alimentação</option>
-                    <option value="alimentacao">Transporte</option>
-                    <option value="alimentacao">Saúde</option>
-                    <option value="alimentacao">Lazer</option>
-                    <option value="alimentacao">Outros</option>
-                </select>
-                <input type="number" placeholder="Valor"/>
+                <h3>Adicionar Entrada</h3>
+                <input type="text" placeholder="Titulo"
+                    onChange={event => setTitle(event.target.value)}
+                    value={title}
+                />
+                
+                <div className="row-form">
+                    <select value={category} onChange={handleChange}>
+                        <option value="trabalho">Trabalho</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <input type="number" placeholder="Valor"
+                        onChange={event => setValue(event.target.value)}
+                        value={value}
+                    />
+                </div>
 
                 <div className="form-buttons">
-                    <button>Confirmar</button>
-                    <button>Cancelar</button>
+                    <button onClick={event => handleNewRevenue(event)}>Confirmar</button>
+                    <button onClick={handleModalRevenue}>Cancelar</button>
                 </div>
 
             </form>

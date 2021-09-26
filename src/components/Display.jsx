@@ -2,22 +2,52 @@ import { useContext } from "react"
 import { FinancasContext } from "../pages/Dashboard"
 
 export function Display(){
-    const { handleModalSpent, financasArray } = useContext(FinancasContext)
+    const { handleModalSpent, handleModalRevenue, allFinances} = useContext(FinancasContext)
+
+    let total
+    let saidas
+    let entradas
+    if(allFinances){
+        total = allFinances.reduce(getTotal, 0)
+        entradas = allFinances.reduce(getEntradas, 0)
+        saidas = allFinances.reduce(getSaidas, 0)
+
+        function getTotal(total, item){
+            return total + item.value
+        }
+
+        function getEntradas(total, item){
+            if(item.type === "entrada"){
+                return total + item.value
+            }
+
+            return total
+        }
+
+        function getSaidas(total, item){
+            if(item.type === "saida"){
+                return total + item.value
+            }
+
+            return total
+        }
+
+    }
+
 
     return (
         <div className="display">
-            <span>R$ 1000</span>
-{/*             <h2>{financasArray}</h2> */}
+            <span>{total.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})}</span>
             <div className="footer-display">
-                <span>R$ 1000 
+                <span>{saidas.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
                     <button onClick={handleModalSpent}>
-                        <i class="fas fa-minus-circle"></i>
+                        <i className="fas fa-minus-circle"></i>
                     </button>
                 </span>
 
-                <span>R$ 2000 
-                    <button>
-                        <i class="fas fa-plus-circle"></i>
+                <span>{entradas.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
+                    <button onClick={handleModalRevenue}>
+                        <i className="fas fa-plus-circle"></i>
                     </button>
                 </span>
             </div>

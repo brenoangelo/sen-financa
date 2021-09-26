@@ -52,8 +52,8 @@ main{
 .display{
     display: flex;
     flex-direction: column;
-    width: 400px;
-
+    width: 100%;
+    max-width: 800px;
     margin-bottom: 50px;
 }
 
@@ -125,9 +125,24 @@ main{
 
 table td, th{
     text-align: left;
-    padding: 10px;
+    padding: 15px 25px;
+    text-transform: capitalize;
 }
 
+table td:first-of-type, 
+th:first-of-type{
+    padding: 15px 0!important;
+}
+
+td > span{
+    cursor: pointer;
+    color: var(--blue);
+}
+
+td > span:first-of-type{
+    margin-right: 10px;
+    color: var(--red);
+}
 
 .categorias tr:nth-of-type(2){
     color: var(--orange);
