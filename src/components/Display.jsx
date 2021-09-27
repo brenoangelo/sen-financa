@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { FinancasContext } from "../pages/Dashboard"
+import { FinancasContext } from '../views/Dashboard'
 
 export function Display(){
     const { handleModalSpent, handleModalRevenue, allFinances} = useContext(FinancasContext)
@@ -38,7 +38,7 @@ export function Display(){
 
     return (
         <div className="display">
-            <span>{total?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})}</span>
+            <span className={total < 0 ? 'saida':'entrada'}>{total?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})}</span>
             <div className="footer-display">
                 <span>{saidas?.toLocaleString('pt-BR', {style:'currency', currency: "BRL"})} 
                     <button onClick={handleModalSpent}>

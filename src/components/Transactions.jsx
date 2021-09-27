@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react"
-import { FinancasContext } from "../pages/Dashboard"
+import { FinancasContext } from '../views/Dashboard'
 
 export function Transactions(){
     const [ type, setType ] = useState('todos')
@@ -85,7 +85,7 @@ export function Transactions(){
         <div className="transactions">
     
         {
-            allFinances.length > 0 ? (
+            allFinances?.length > 0 ? (
         <>
             <div className="filters">
                 <div className="type">
@@ -163,7 +163,7 @@ export function Transactions(){
             </table>
         </>
         ) : ( 
-            <span>Você não tem finanças :(</span> 
+            <span><i class="fas fa-exclamation-circle"></i> Você ainda não tem finanças</span> 
             )
         }
         </div>

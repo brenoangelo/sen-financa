@@ -42,11 +42,13 @@ main{
 }
 
 .display > span{
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
-
+    
     margin-bottom: 15px;
     text-align: center;
+    padding: 5px;
+
 }
 
 .display > .footer-display{
@@ -144,6 +146,11 @@ main{
 .transactions table{
     border-collapse: collapse;
     width: 100%;
+}
+
+.transactions > span{
+    font-size: 22px;
+    color: var(--orange);
 }
 
 table{

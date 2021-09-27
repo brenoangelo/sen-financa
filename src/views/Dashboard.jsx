@@ -1,18 +1,17 @@
-import { useState, createContext, useEffect } from "react"
+import { useState, createContext, useEffect} from "react"
 
-import { Card } from "../components/Card"
+
 import { SpentModal } from "./SpentModal"
 import { RevenueModal } from "./RevenueModal"
 import { EditModal } from "./EditModal"
+
+import { Card } from "../components/Card"
 import { Transactions } from "../components/Transactions"
-import { Category } from "../components/Category"
 import { Display } from "../components/Display"
 
 import senLogo from '../assets/images/finance-white.png'
 
 import '../styles/dashboard.css'
-
-export const FinancasContext = createContext({})
 
 function dateNow(){
     let date = new Date(),
@@ -22,6 +21,8 @@ function dateNow(){
 
     return `${day}/${month}/${year}`
 }
+
+export const FinancasContext = createContext({})
 
 export function Dashboard(){
     const [modalEdit, setModalEdit] = useState({open: false, id: 0})
@@ -35,7 +36,6 @@ export function Dashboard(){
     },[])
 
     useEffect(()=>{
-
         if(!allFinances){
             setAllFinances(JSON.parse(localStorage.getItem('@sen-finance/finances')))
             
@@ -67,8 +67,6 @@ export function Dashboard(){
         }
     }
 
-    
-
     function deleteFinance(id){
         let resp = prompt('Quer mesmo excluir essa Financa ? [s/n]')?.toLowerCase() 
         if(resp != 's'){
@@ -83,52 +81,46 @@ export function Dashboard(){
         setAllFinances(financesFilt)
     }
 
-
     return (
-        <div id="dashboard-page">
-            <FinancasContext.Provider 
-                value={{allFinances, setAllFinances, modalEdit,handleModalSpent, handleModalEdit, handleModalRevenue, dateNow,
-                deleteFinance}}>
-                
-                {
-                    modalSpent ? <SpentModal /> : ""
-                }
+        <FinancasContext.Provider value={{modalEdit, allFinances, setAllFinances, handleModalSpent, handleModalEdit, handleModalRevenue, dateNow,
+            deleteFinance}}> 
+            <div id="dashboard-page">
+    
+                    {
+                        modalSpent ? <SpentModal /> : ""
+                    }
 
-                {
-                    modalRevenue ? <RevenueModal /> : ""
-                }
+                    {
+                        modalRevenue ? <RevenueModal /> : ""
+                    }
 
-                {
-                    modalEdit.open == true ? <EditModal /> : ""
-                }
+                    {
+                        modalEdit.open ? <EditModal /> : ""
+                    }
 
-                <header>
+                    <header>
 
-                    <div className="logo">
-                        <img src={senLogo} alt="Sen Finanças" /> 
-                        <span>sen<strong>finanças</strong></span>
-                    </div>
+                        <div className="logo">
+                            <img src={senLogo} alt="Sen Finanças" /> 
+                            <span>sen<strong>finanças</strong></span>
+                        </div>
 
-                    
-                </header>
-
-                <main>
-                    <Display />
-
-                    <div className="cards">
                         
-                        <Card>  
-                            <h3>Transações</h3>
-                            <Transactions />
-                        </Card>
+                    </header>
 
-                        <Card>
-                            <h3>% Gastos por Categorias</h3>
-                            <Category />
-                        </Card>
-                    </div>    
-                </main>
-            </FinancasContext.Provider>
-        </div>
+                    <main>
+                        <Display />
+
+                        <div className="cards">
+                            
+                            <Card>  
+                                <h3>Transações</h3>
+                                <Transactions />
+                            </Card>
+                        </div>    
+                    </main>
+                
+            </div>
+        </FinancasContext.Provider>
     )
 }

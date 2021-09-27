@@ -1,5 +1,5 @@
 
-import { Dashboard } from './pages/Dashboard';
+import { Dashboard } from './views/Dashboard';
 
 import './styles/global.css'
 

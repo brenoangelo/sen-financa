@@ -21,6 +21,24 @@
 }
 
 .card h3{
-    font-size: 28px;
+    font-size: 34px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card h3::before{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--gray);
+    margin-right: 10px;
+}
+
+.card h3::after{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--gray);
+    margin-left: 10px;
 }
