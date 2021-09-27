@@ -12,12 +12,52 @@ header{
     background: var(--green);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px;
+    width: 100%;
 }
 
 header > .logo > span,
 header > .logo > span > strong{
     color: #fff;
+    
+}
+
+header > .faq{
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    position: absolute;
+    right: 15px;
+    padding: 10px;
+}
+
+header > .faq > span{
+    position: absolute;
+    right: 0;
+
+    display: block;
+    padding: 15px;
+    width: 250px;
+    background: #fff;
+
+    filter: brightness(0.95);
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20);
+
+    color: var(--gray);
+    font-size: 13px;
+    
+    
+    line-height:23px;
+    visibility: hidden;
+
+}
+
+header > .faq:hover span{
+    visibility: visible;
 }
 
 main{
