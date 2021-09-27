@@ -47,15 +47,18 @@ export function RevenueModal(){
                 />
                 
                 <div className="row-form">
+                    
                     <select value={category} onChange={handleChange}>
                         <option value="trabalho">Trabalho</option>
                         <option value="freelancer">Freelancer</option>
-                        <option value="outros">Outros</option>
+                        <option value="outras receitas">Outras Receitas</option>
                     </select>
-                    <input type="number" placeholder="Valor"
+                    <span>R$</span>
+                    <input placeholder="Valor" type="number" required
                         onChange={event => setValue(event.target.value)}
                         value={value}
                     />
+
                 </div>
 
                 <div className="form-buttons">

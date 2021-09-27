@@ -117,8 +117,28 @@ main{
 
 .transactions .filters select {
     cursor: pointer;
+    
     font-size: 14px;
+    font-weight: bold;
+
     margin: 5px;
+    padding: 2px;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--blue);
+    color: #fff;
+    filter: brightness(0.90);
+
+    transition:box-shadow, filter 0.3s;
+}
+
+.transactions .filters select:hover{
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20);
+
+    filter: brightness(1);
 }
 
 .transactions table{
@@ -126,27 +146,41 @@ main{
     width: 100%;
 }
 
-table td, th{
-    text-align: left;
-    padding: 15px 25px;
-    text-transform: capitalize;
+table{
+    background-size: 100% auto;
+}
+
+tr{
+    height: 50px;
 }
 
 td{
-    width: 25%;
+    width: 150px;
 }
 
-table td:first-of-type, 
-th:first-of-type{
-    padding: 15px 0!important;
+th{
+    width: 150px;
 }
 
-td > span{
+table td, th{
+    text-align: left;
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+
+
+.transactions > table > tr > td:first-of-type, 
+.transactions > table > tr > th:first-of-type{
+    max-width: 50px;
+    padding: 15px 0;
+}
+
+.transactions > table > tr > td > span{
     cursor: pointer;
     color: var(--blue);
 }
 
-td > span:first-of-type{
+.transactions > table > tr > td > span:first-of-type{
     margin-right: 10px;
     color: var(--red);
 }

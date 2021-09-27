@@ -117,16 +117,15 @@ export function Dashboard(){
 
                     <div className="cards">
                         
-                        <Card>
-                            
+                        <Card>  
                             <h3>Transações</h3>
                             <Transactions />
                         </Card>
 
-{/*                         <Card>
-                            <h3>Categorias</h3>
+                        <Card>
+                            <h3>% Gastos por Categorias</h3>
                             <Category />
-                        </Card> */}
+                        </Card>
                     </div>    
                 </main>
             </FinancasContext.Provider>

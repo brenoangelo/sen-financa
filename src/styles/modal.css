@@ -38,6 +38,22 @@ form > h3{
     flex: 1;
 }
 
+select{
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.row-form > span{
+    font-size: 22px;
+    padding: 5px;
+    background: var(--gray);
+    color: #fff;
+    line-height: 35px;
+    max-height: 45px;
+    margin-right: -3px;
+    border-radius: 10px 0 0 10px;
+}
+
 form input{
     padding-left: 10px;
     font-size:22px;
@@ -46,6 +62,13 @@ form input{
     width: 100%;
     border-radius: 5px;
     border: 1px solid #888;
+    display: flex;
+}
+
+form input:focus{
+    outline: 0;
+    -webkit-box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20); 
+    box-shadow: 0px 5px 11px -1px rgba(0,0,0,0.20);
 }
 
 form select{

@@ -55,9 +55,11 @@ export function SpentModal(props){
                         <option value="alimentacao">Alimentação</option>
                         <option value="transporte">Transporte</option>
                         <option value="saude">Saúde</option>
+                        <option value="contas">Contas</option>
                         <option value="lazer">Lazer</option>
-                        <option value="outros">Outros</option>
+                        <option value="outras despesas">Outras Despesas</option>
                     </select>
+                    <span>R$</span>
                     <input type="number" placeholder="Valor"
                         onChange={event => setValue(event.target.value)}
                         value={value}

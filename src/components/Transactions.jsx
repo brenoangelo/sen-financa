@@ -88,9 +88,8 @@ export function Transactions(){
             allFinances.length > 0 ? (
         <>
             <div className="filters">
-    
                 <div className="type">
-                    <i className={`fas ${type === 'entrada'?'fa-long-arrow-alt-up':'fa-long-arrow-alt-down'}`}></i>
+                    <i className={`fas ${type === 'entrada' ? 'fa-long-arrow-alt-up' : type==='todos'? 'fa-retweet': 'fa-long-arrow-alt-down'}`}></i>
                     <select name="tipo" value={type} onChange={handleChangeType}>
                         <option value="todos">Todos</option>
                         <option value="entrada">Entradas</option>
@@ -99,7 +98,7 @@ export function Transactions(){
                 </div>
 
                 <div className="category">
-                    
+                    <i className="fas fa-list"></i>
                     <select name="category" value={category} onChange={handleChangeCategory}>
                         {type === 'saida' || type === 'todos' ? (
                             <>
@@ -107,8 +106,9 @@ export function Transactions(){
                                 <option value="alimentacao">Alimentação</option>
                                 <option value="transporte">Transporte</option>
                                 <option value="saude">Saúde</option>
+                                <option value="contas">Contas</option>
                                 <option value="lazer">Lazer</option>
-                                <option value="outros">Outros</option>
+                                <option value="outras despesas">Outras despesas</option>
                             </>
                         ): ('')
                         }
@@ -117,7 +117,7 @@ export function Transactions(){
                                 <option value="todos">Todos</option>
                                 <option value="trabalho">Trabalho</option>
                                 <option value="freelancer">Freelancer</option>
-                                <option value="outros">Outros</option>
+                                <option value="outras receitas">Outras Receitas</option>
                             </>
                         ) : ('')}
 

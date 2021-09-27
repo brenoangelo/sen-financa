@@ -1,6 +1,9 @@
 
 
-export function Category(props){
+export function Category(){
+
+
+
     return (
         <div className="categorias">
 

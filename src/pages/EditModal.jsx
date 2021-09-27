@@ -74,7 +74,7 @@ export function EditModal(){
                             <>
                                 <option value="trabalho">Trabalho</option>
                                 <option value="freelancer">Freelancer</option>
-                                <option value="outros">Outros</option>
+                                <option value="outras receitas">Outras Receitas</option>
                             </>
                             
                         ) : (
@@ -82,11 +82,13 @@ export function EditModal(){
                                 <option value="alimentacao">Alimentação</option>
                                 <option value="transporte" >Transporte</option>
                                 <option value="saude">Saúde</option>
+                                <option value="contas">Contas</option>
                                 <option value="lazer">Lazer</option>
                                 <option value="outros">Outros</option>
                             </>
                         )}
                     </select>
+                    <span>R$</span>
                     <input type="number" placeholder="Valor"
                         value={value} onChange={(event) => setValue(event.target.value)}
                     />
