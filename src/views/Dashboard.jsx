@@ -100,7 +100,7 @@ export function Dashboard(){
                             <span>sen<strong>finanças</strong></span>
                         </div>
                         <span className="faq">
-                            <i class="fas fa-question-circle"></i>
+                            <i className="fas fa-question-circle"></i>
                             <span>
                                 <li>Clique no <i className="fas fa-minus-circle"></i> Para add novas despesas.</li>
                                 <li>Clique no <i className="fas fa-plus-circle"></i>Para add novas receitas.</li>
