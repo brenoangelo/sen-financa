@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://tarefas-c9ee5.web.app">SenFinança</a>
+    <a href="https://sen-financas.web.app">SenFinança</a>
 </h1>
 <p align="center">Um app para organizar suas finanças pessoais</p>
 
